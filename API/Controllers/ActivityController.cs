@@ -17,7 +17,7 @@ namespace API.Controllers
         {
             this._service = activityService;
         }
-        [HttpPost]
+        [HttpPost(template:"postActivity")]
         public Activity CreateActivity([FromBody] Activity activity)
         {
             return _service.CreateActivity(activity);
@@ -34,7 +34,7 @@ namespace API.Controllers
         {
             return _service.GetActivityById(id);
         }
-        [HttpGet]
+        [HttpGet(template:"activity")]
         public List<Activity> GetAllActivity()
         {
             return _service.GetAllActivity();
